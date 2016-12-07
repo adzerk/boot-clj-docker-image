@@ -29,6 +29,6 @@ ENV BOOT_LOCAL_REPO /m2
 ENV BOOT_JVM_OPTIONS=-Xmx2g
 
 # download & install deps, cache REPL and web deps
-RUN /usr/bin/boot web -s doesnt/exist repl -e '(System/exit 0)' && rm -rf target
+RUN /usr/bin/boot && /usr/bin/boot web -s doesnt/exist repl -e '(System/exit 0)' && rm -rf target
 
 ENTRYPOINT ["/usr/bin/boot"]
